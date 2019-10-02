@@ -1,0 +1,92 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <filter>
+  	<filter-name>MyFilter</filter-name>
+  	<display-name>MyFilter</display-name>
+  	<description></description>
+  	<filter-class>filters.MyFilter</filter-class>
+  	<init-param>
+  	<param-name> itea </param-name>
+  	<param-value> Alex-123 </param-value>
+  	</init-param>
+  </filter>
+  
+  <filter>
+  	<filter-name>DiscountFilter</filter-name>
+  	<display-name>DiscountFilter</display-name>
+  	<description></description>
+  	<filter-class>filters.DiscountFilter</filter-class>
+  	<init-param>
+  	<param-name> isReg </param-name>
+  	<param-value> true </param-value>
+  	</init-param>
+  </filter>
+   <filter-mapping>
+  	<filter-name>MyFilter</filter-name>
+  	<servlet-name>AuthServlet</servlet-name>
+  <!--  <url-pattern>/</url-pattern> -->
+  </filter-mapping>
+   <filter-mapping>
+  
+   	<filter-name>DiscountFilter</filter-name>
+   	<servlet-name>DiscountServlet</servlet-name>
+ <!--   	<url-pattern>/DiscountFilter</url-pattern> -->
+   </filter-mapping>
+  
+  <servlet>
+  	<servlet-name>AuthServlet</servlet-name>
+  	<display-name>AuthServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.AuthServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RegServlet</servlet-name>
+  	<display-name>RegServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.RegServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CorrectServlet</servlet-name>
+  	<display-name>CorrectServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.CorrectServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DiscountServlet</servlet-name>
+  	<display-name>DiscountServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.DiscountServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AuthedServlet</servlet-name>
+  	<display-name>AuthedServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.AuthedServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AuthServlet</servlet-name>
+  	<url-pattern>/auth</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegServlet</servlet-name>
+  	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CorrectServlet</servlet-name>
+  	<url-pattern>/correct</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DiscountServlet</servlet-name>
+  	<url-pattern>/discounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AuthedServlet</servlet-name>
+  	<url-pattern>/authed</url-pattern>
+  </servlet-mapping>
+</web-app>
